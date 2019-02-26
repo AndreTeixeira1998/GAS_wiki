@@ -1,0 +1,6 @@
+# Rooms
+* Lobby
+    * Sensors:
+        * 
+    * Actuators:
+        *  
