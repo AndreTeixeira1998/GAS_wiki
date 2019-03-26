@@ -31,7 +31,7 @@ Its used to be able to logically compare, inside the same rule, diferent types o
 If it has a child it is considered an AND, otherwise its an OR.  
 
 # Example
-
+´´´
 "rules": [
                 {
                     "type": 0,
@@ -64,4 +64,4 @@ If it has a child it is considered an AND, otherwise its an OR.
                     ]
                 }
             ]
-
+´´´
