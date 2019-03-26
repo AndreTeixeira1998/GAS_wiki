@@ -15,22 +15,22 @@ Inside the array we can add:
 2 - Rule That verifies if the value is equal than the number used to compare
 3 - Rule That verifies if the value is within +-5% margin of the number used to compare
 
-##Value
+## Value
 Numeric value used to compare
 
-##Sensors
+## Sensors
 Used to specify the sensors used in the rule. 
 First we indicate the node ID and then, separed by a ".", the sensor ID.
 
-##Actuators
+## Actuators
 Used to specify the actuators to update.
 First we indicate the node ID and then, separed by a ".", the actuator ID.
 
-##Childs
+## Childs
 Its used to be able to logically compare, inside the same rule, diferent types of comparison.
 If it has a child it is considered an AND, otherwise its an OR.  
 
-#Example
+# Example
 
 "rules": [
                 {
