@@ -10,10 +10,12 @@ Inside the array we can add:
 
 ## Type
  The type is a number that can be:
+```
 0 - Rule That verifies if the value is lesser than the number used to compare
 1 - Rule That verifies if the value is greater than the number used to compare
 2 - Rule That verifies if the value is equal than the number used to compare
 3 - Rule That verifies if the value is within +-5% margin of the number used to compare
+```
 
 ## Value
 Numeric value used to compare
