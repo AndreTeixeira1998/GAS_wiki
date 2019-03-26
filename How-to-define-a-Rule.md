@@ -31,37 +31,29 @@ Its used to be able to logically compare, inside the same rule, diferent types o
 If it has a child it is considered an AND, otherwise its an OR.  
 
 # Example
-´´´
+```
 "rules": [
-                {
-                    "type": 0,
-                    "value": 10,
-                    "sensors": ["0.0"],
-                    "actuators": ["0.0"],
-                    "childs": [
-                        {
-                            "type": 1,
-                            "value": 40,
-                            "sensors": ["0.1"],
-                            "actuators": ["0.0"],
-                            "childs": []
-                        }
-                    ]
-                },
-                {
-                    "type": 0,
-                    "value": 5,
-                    "sensors": ["1.3"],
-                    "actuators": ["1.10"],
-                    "childs": [
-                        {
-                            "type": 1,
-                            "value": 20,
-                            "sensors": ["1.3"],
-                            "actuators": ["0.0"],
-                            "childs": []
-                        }
-                    ]
-                }
-            ]
-´´´
+    {
+        "type": 0,
+        "value": 10,
+        "sensors": ["0.0"],
+        "actuators": ["0.0"],
+        "childs": []
+    },
+    {
+        "type": 1,
+        "value": 10,
+        "sensors": ["0.2"],
+        "actuators": ["0.1"],
+        "childs": [
+            {
+                "type": 1,
+                "value": 20,
+                "sensors": ["1.3"],
+                "actuators": ["0.0"],
+                "childs": []
+            }
+        ]
+    }
+]
+```
