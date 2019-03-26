@@ -1,3 +1,5 @@
+# **OUTDATED DOCUMENTATION. PLEASE REFER TO THE LIBRARY HEADER FILE**
+
 # Data Structure
 
 This library allows the storage of all data concerning a IoT node, it's sensor, actuators and the rooms they are inserted in.
