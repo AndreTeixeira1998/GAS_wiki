@@ -1,4 +1,4 @@
-![use cases](https://github.com/SINF-FEUP/HAS_A51/wiki/GAS_use_case_diagram-1.png)
+![use cases](GAS_use_case_diagram-1.png)
 
 Specify Gym topology:
 * As a User, I want to be able to specify a custom Gym topology to fit my needs.

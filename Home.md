@@ -3,7 +3,12 @@
 ## Libraries
  * [DataStructure](Data-Structure)
 
-## Instruction
+## Instructions
+ * [Project Usage and Compilation](Project-Usage-and-Compilation)
+ * [Configuration File](Configuration-File)
+ * [How to Define a Rule](How-to-define-a-Rule)
+
+## Information
  * [Product Backlog](Product-Backlog)
  * [UML Use Case Diagram & Use Case Descriptions](UML-Use-Case-Diagram-&-Use-Case-Descriptions)
- * [How to Define a Rule](How-to-define-a-Rule)
+ * [UML Class Diagram](UML-Class-Diagram)
