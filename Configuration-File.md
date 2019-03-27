@@ -46,7 +46,7 @@ The JSON configuration file is structured in the following manner:
 * TYPE_RULE_LESS_THEN     0
 * TYPE_RULE_GREATER_THEN  1
 * TYPE_RULE_EQUAL_TO      2
-* TYPE_RULE_WITHIN_MARGIN 3
+* TYPE_RULE_WITHIN_MARGIN 3 ----> Within +-5%
 
 ## Configuration Example
 
