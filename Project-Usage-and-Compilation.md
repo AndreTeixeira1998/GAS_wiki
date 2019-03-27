@@ -1,6 +1,7 @@
 # Building/Compiling
 
 * Recursively clone the repository to include all submodules.
+    * A recursive call is required because the SINF simulators/aplications are required and a external JSON parsing library is used.
 * Run `$ make` in the terminal to compile. (The Makefile is using 'clang' to compile the program, therefore clang can be considered a dependency)
 
 # Running the project
