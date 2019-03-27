@@ -35,18 +35,18 @@ The JSON configuration file is structured in the following manner:
     * `b` : 0-255 value for color Blue
 
 ## Sensor types
-    * TYPE_SENSOR_VOLTAGE     0
-    * TYPE_SENSOR_TEMPERATURE 1
-    * TYPE_SENSOR_HUMIDITY    2
-    * TYPE_SENSOR_LIGHT       3
-    * TYPE_SENSOR_CURRENT     4
+* TYPE_SENSOR_VOLTAGE     0
+* TYPE_SENSOR_TEMPERATURE 1
+* TYPE_SENSOR_HUMIDITY    2
+* TYPE_SENSOR_LIGHT       3
+* TYPE_SENSOR_CURRENT     4
 
 
 ## Rule types
-    * TYPE_RULE_LESS_THEN     0
-    * TYPE_RULE_GREATER_THEN  1
-    * TYPE_RULE_EQUAL_TO      2
-    * TYPE_RULE_WITHIN_MARGIN 3
+* TYPE_RULE_LESS_THEN     0
+* TYPE_RULE_GREATER_THEN  1
+* TYPE_RULE_EQUAL_TO      2
+* TYPE_RULE_WITHIN_MARGIN 3
 
 ## Configuration Example
 
