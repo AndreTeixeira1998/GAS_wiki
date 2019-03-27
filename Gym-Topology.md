@@ -1,42 +1,43 @@
 # Rooms
-* Receção:
-  * Sensores:
-    * sensor_luminusidade1
+* **Receção:**
+  * **Sensores:**
+    * sensor_luminosidade1
     * sensor_tensao_selfS
     * sensor_corrente_selfS
 
-  * Actuadores:
+  * **Actuadores:**
     * Lamp1
     * Vending_Current
 
-  * Regras: 
-    * sensor_luminusidade1 <= 1200  --> Lamp1:ON
-    * sensor_tensao_selfS > 400 OR sensor_corrente_selfS > 3 --> Vending_Current:OFF (assumindo uma vending machine com potencia maxima de 1200W)
+  * **Regras:**
+    * sensor_luminosidade1 <= 1200  --> Lamp1:ON
+    * (sensor_tensao_selfS > 400 OR sensor_corrente_selfS > 3) --> ``Vending_Current:OFF
+      (assumindo uma vending machine com potência máxima de 1200W)
 
 
-* WC_Masculino: 
-  * Sensores:
+* **WC_Masculino:** 
+  * **Sensores:**
     * sensor_corrente_WC_M
-    * sensor_luminusidade_WC_M
+    * sensor_luminosidade_WC_M
 
-  * Actuadores:
+  * **Actuadores:**
     * Lamp_WC_M
 
-  * Regras: 
-    * sensor_corrente_WC_M==0 AND sensor_luminusidade_WC_M <= 800 AND Flag_WC_M==0 --> Lamp_WC_M:ON, Flag_WC_M==1
-    * sensor_corrente_WC_M==0 AND Flag_WC_M==1 OR sensor_luminusidade_WC_M >= 1200  --> Lamp_WC_M:OFF, Flag_WC_M==0
+  * **Regras:** 
+    * sensor_corrente_WC_M==0 AND sensor_luminosidade_WC_M <= 800 AND Flag_WC_M==0 --> Lamp_WC_M:ON, Flag_WC_M==1
+    * sensor_corrente_WC_M==0 AND Flag_WC_M==1 OR sensor_luminosidade_WC_M >= 1200  --> Lamp_WC_M:OFF, Flag_WC_M==0
 
-* WC_Feminino: 
-  * Sensores:
+* **WC_Feminino:** 
+  * **Sensores:**
     * sensor_corrente_WC_F
-    * sensor_luminusidade_WC_F
+    * sensor_luminosidade_WC_F
 
   * Actuadores:
     * Lamp_WC_F
 
   * regras: 
-    * sensor_corrente_WC_F==0 AND sensor_luminusidade_WC_F <= 800 AND Flag_WC_F==0 --> Lamp_WC_F:ON, Flag_WC_F==1
-    * sensor_corrente_WC_F==0 AND Flag_WC_F==1 OR sensor_luminusidade_WC_F >= 1200   --> Lamp_WC_F:OFF, Flag_WC_F==0
+    * sensor_corrente_WC_F==0 AND sensor_luminosidade_WC_F <= 800 AND Flag_WC_F==0 --> Lamp_WC_F:ON, Flag_WC_F==1
+    * sensor_corrente_WC_F==0 AND Flag_WC_F==1 OR sensor_luminosidade_WC_F >= 1200   --> Lamp_WC_F:OFF, Flag_WC_F==0
 
 * Musculação
   * Sensores:
@@ -56,7 +57,7 @@
 * Balneario_Masc
   * Sensores:
     * sensor_corrente_B_M
-    * sensor_luminusidade_B_M
+    * sensor_luminosidade_B_M
     * sensor_humidade_B_M
 
   * Actuadores:
@@ -64,14 +65,14 @@
     * desumidificador_B_M
 
   * Regras:
-    * sensor_corrente_B_M==0 AND sensor_luminusidade_B_M <= 800  --> Lamp_B_M:ON
+    * sensor_corrente_B_M==0 AND sensor_luminosidade_B_M <= 800  --> Lamp_B_M:ON
     * sensor_humidade_B_M > 8 --> desumidificador_B_M:ON
     * sensor_humidade_B_M <3 --> desumidificador_B_M:OFF
 
 * Balneario_Fem
   * Sensores:
     * sensor_corrente_B_F
-    * sensor_luminusidade_B_F
+    * sensor_luminosidade_B_F
     * sensor_humidade_B_F
 
   * Actuadores:
@@ -79,14 +80,14 @@
     * desumidificador_B_F
 
   * Regras:
-    * sensor_corrente_B_F==0 AND sensor_luminusidade_B_F <= 800  --> Lamp_B_F:ON 
+    * sensor_corrente_B_F==0 AND sensor_luminosidade_B_F <= 800  --> Lamp_B_F:ON 
     * sensor_humidade_B_F > 8 --> desumidificador_B_F:ON
     * sensor_humidade_B_F <3 --> desumidificador_B_F:OFF
 
 * Piscina
   * Sensores:
     * sensor_humidade_piscina
-    * sensor_Luminusidade_piscina
+    * sensor_Luminosidade_piscina
     * sensor_corrente_Piscina
     * sensor_temperatura_piscina
 
@@ -102,7 +103,7 @@
     * sensor_humidade_piscina =<10 --> desumidificador_piscina:OFF
     * sensor_humidade_piscina<3 --> humidificador_piscina:ON
     * sensor_humidade_piscina>10 --> humidificador_piscina:OFF
-    * sensor_Luminusidade_piscina < 1000 --> Lamp_Piscina:ON
+    * sensor_Luminosidade_piscina < 1000 --> Lamp_Piscina:ON
     * sensor_temperatura_piscina < 13 --> heater_piscina:ON
     * sensor_temperatura_piscina > 30 --> heater_piscina:OFF
     * sensor_corrente_Piscina==0 --> Rising edge dispensador_toalhas1:ON
