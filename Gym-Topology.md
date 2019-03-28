@@ -7,12 +7,13 @@
 
   * **Actuadores:**
     * Lamp1
+    * Lamp2
     * Vending_Current
 
   * **Regras:**
-    * sensor_luminosidade1 <= 1200  --> Lamp1:ON
-    * (sensor_tensao_selfS > 400 OR sensor_corrente_selfS > 3) --> ``Vending_Current:OFF
-      (assumindo uma vending machine com potência máxima de 1200W)
+    * sensor_luminosidade1 <= 1200  --> Lamp1:ON AND Lamp2:ON)
+    * (sensor_tensao_selfS > 400 OR sensor_corrente_selfS > 30) --> Vending_Current:OFF
+      (assumindo uma vending machine com potência máxima de 12000W)
 
 
 * **WC_Masculino:** 
@@ -32,96 +33,90 @@
     * sensor_corrente_WC_F
     * sensor_luminosidade_WC_F
 
-  * Actuadores:
+  * **Actuadores:**
     * Lamp_WC_F
 
-  * regras: 
+  * **regras:** 
     * sensor_corrente_WC_F==0 AND sensor_luminosidade_WC_F <= 800 AND Flag_WC_F==0 --> Lamp_WC_F:ON, Flag_WC_F==1
     * sensor_corrente_WC_F==0 AND Flag_WC_F==1 OR sensor_luminosidade_WC_F >= 1200   --> Lamp_WC_F:OFF, Flag_WC_F==0
 
-* Musculação
-  * Sensores:
-    * mote_x: sensor_tensao_M1 , sensor_corrente_M1
-    * mote_y: sensor_tensao_M2 , sensor_corrente_M2
+* **Musculação**
+  * **Sensores:**
+    * sensor_tensao_M1 
+    * sensor_corrente_M1
+   
 
-  * Atuadores:
-    * mote_X: Musc_Machine1
-    * mote_Y: Musc_Machine2
+  * **Atuadores:**
+    * Musc_Machine1
+    * Lamp2
+    
 
-  * Regras:
-    * sensor_tensao_M1 > 150 OR sensor_corrente_M1 > 4 --> Musc_Machine1:OFF (assumindo uma maquina com potencia maxima de 520W)
-    * sensor_tensao_M2 > 60 OR sensor_corrente_M2 > 2 --> Musc_Machine2:OFF (assumindo uma maquina com potencia maxima de 120W)
-    * sensor_corrente2==0 And --> lotação pessoas++,Lamp_ instrucao:ON, Lamp2:ON
-    * lotação > 20 --> Alarm1:ON (um quadradinho que passa de verde para vermelho)
+  * **Regras:**
+    * sensor_tensao_M2 > 60 OR sensor_corrente_M2 > 2 --> Musc_Machine1:OFF 
+    * sensor_corrente_M1==0 And --> lotação pessoas++,Lamp_ instrucao:ON, Lamp2:ON
+  
 
-* Balneario_Masc
-  * Sensores:
+* **Balneario_Masc**
+  * **Sensores:**
     * sensor_corrente_B_M
     * sensor_luminosidade_B_M
     * sensor_humidade_B_M
 
-  * Actuadores:
+  * **Actuadores:**
     * Lamp_B_M
     * desumidificador_B_M
 
-  * Regras:
+  * **Regras:**
     * sensor_corrente_B_M==0 AND sensor_luminosidade_B_M <= 800  --> Lamp_B_M:ON
-    * sensor_humidade_B_M > 8 --> desumidificador_B_M:ON
-    * sensor_humidade_B_M <3 --> desumidificador_B_M:OFF
+    * sensor_humidade_B_M > 800 --> desumidificador_B_M:ON
+    * sensor_humidade_B_M <300 --> desumidificador_B_M:OFF
 
-* Balneario_Fem
-  * Sensores:
+* **Balneario_Fem**
+  * **Sensores:**
     * sensor_corrente_B_F
     * sensor_luminosidade_B_F
     * sensor_humidade_B_F
 
-  * Actuadores:
+  * **Actuadores:**
     * Lamp_B_F
     * desumidificador_B_F
 
-  * Regras:
+  * **Regras:**
     * sensor_corrente_B_F==0 AND sensor_luminosidade_B_F <= 800  --> Lamp_B_F:ON 
-    * sensor_humidade_B_F > 8 --> desumidificador_B_F:ON
-    * sensor_humidade_B_F <3 --> desumidificador_B_F:OFF
+    * sensor_humidade_B_F > 800 --> desumidificador_B_F:ON
+    * sensor_humidade_B_F <300 --> desumidificador_B_F:OFF
 
-* Piscina
-  * Sensores:
+* **Piscina**
+  * **Sensores:**
     * sensor_humidade_piscina
     * sensor_Luminosidade_piscina
     * sensor_corrente_Piscina
     * sensor_temperatura_piscina
 
-  * Atuadores:
+  * **Atuadores:**
     * desumidificador_piscina
-    * humidificador_piscina
     * Lamp_Piscina
     * heater_piscina
     * dispensador_toalhas1
 
-  * Regras:
-    * sensor_humidade_piscina > 30 --> desumidificador_piscina:ON
-    * sensor_humidade_piscina =<10 --> desumidificador_piscina:OFF
-    * sensor_humidade_piscina<3 --> humidificador_piscina:ON
-    * sensor_humidade_piscina>10 --> humidificador_piscina:OFF
-    * sensor_Luminosidade_piscina < 1000 --> Lamp_Piscina:ON
-    * sensor_temperatura_piscina < 13 --> heater_piscina:ON
+  * **Regras:**
+    * sensor_humidade_piscina > 300 --> desumidificador_piscina:ON
     * sensor_temperatura_piscina > 30 --> heater_piscina:OFF
     * sensor_corrente_Piscina==0 --> Rising edge dispensador_toalhas1:ON
+    * sensor_Luminosidade_piscina>800 --> Lamp_Piscina:OFF
 
-* Sauna
-  * Sensores:
+* **Sauna**
+  * **Sensores:**
     * sensor_temperatura_sauna
     * sensor_humidade_sauna
     * sensor_corrente_Sauna
 
-  * Actuadores:
+  * **Actuadores:**
     * humidificador_sauna
     * heater_sauna
     * dispensador_toalhas2
 
-  * Regras:
-    * sensor_humidade_sauna<3 --> humidificador_sauna:ON
-    * sensor_humidade_sauna>10 --> humidificador_sauna:OFF
-    * sensor_temperatura_sauna < 25 --> heater_sauna:ON
-    * sensor_temperatura_sauna > 35 --> heater_sauna:OFF
+  * **Regras:**
+    * sensor_humidade_sauna<300 --> humidificador_sauna:ON
+    * sensor_temperatura_sauna > 30 --> heater_sauna:OFF
     * sensor_corrente_sauna==0 --> Rising edge dispensador_toalhas2:ON
