@@ -1,3 +1,4 @@
+```
 actuator(actuator_id, type, #pixel_id -> pixel [UK,NN])
 sensor(sensor_id, type, #pixel_id -> pixel [UK,NN])
 node(node_id)
@@ -15,3 +16,4 @@ sensor_state(sensor_state_id, log_timestamp, sensor_value, #sensor_id ->  sensor
 actuator_state(actuator_state_id,log_timestamp, actuator_value, #actuator_id ->  actuator)
 sensor_state_sensor(#sensor_state_id -> sensor, #sensor_id -> sensor)
 actuator_state_actuator(#actuator_state_id -> actuator, #actuator_id -> actuator)
+```
