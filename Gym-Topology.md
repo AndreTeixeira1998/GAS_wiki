@@ -1,5 +1,10 @@
+# Topologia
+
+![](https://scontent.flis4-1.fna.fbcdn.net/v/t1.15752-9/60555753_821565611563038_5391826377743794176_n.png?_nc_cat=102&_nc_ht=scontent.flis4-1.fna&oh=13afa4267becede9408de756f7bc1b57&oe=5D5240FE)
+
 # Rooms
-* **Receção:**
+
+* **Receção(1):**
   * **Sensores:**
     * sensor_luminosidade1
     * sensor_tensao_selfS
@@ -16,7 +21,7 @@
       (assumindo uma vending machine com potência máxima de 12000W)
 
 
-* **WC_Masculino:** 
+* **WC_Masculino(2):** 
   * **Sensores:**
     * sensor_corrente_WC_M
     * sensor_luminosidade_WC_M
@@ -28,7 +33,7 @@
     * sensor_corrente_WC_M==0 AND sensor_luminosidade_WC_M <= 800 AND Flag_WC_M==0 --> Lamp_WC_M:ON, Flag_WC_M==1
     * sensor_corrente_WC_M==0 AND Flag_WC_M==1 OR sensor_luminosidade_WC_M >= 1200  --> Lamp_WC_M:OFF, Flag_WC_M==0
 
-* **WC_Feminino:** 
+* **WC_Feminino(3):** 
   * **Sensores:**
     * sensor_corrente_WC_F
     * sensor_luminosidade_WC_F
@@ -40,7 +45,7 @@
     * sensor_corrente_WC_F==0 AND sensor_luminosidade_WC_F <= 800 AND Flag_WC_F==0 --> Lamp_WC_F:ON, Flag_WC_F==1
     * sensor_corrente_WC_F==0 AND Flag_WC_F==1 OR sensor_luminosidade_WC_F >= 1200   --> Lamp_WC_F:OFF, Flag_WC_F==0
 
-* **Musculação**
+* **Musculação(4)**
   * **Sensores:**
     * sensor_tensao_M1 
     * sensor_corrente_M1
@@ -56,7 +61,7 @@
     * sensor_corrente_M1==0 And --> lotação pessoas++,Lamp_ instrucao:ON, Lamp2:ON
   
 
-* **Balneario_Masc**
+* **Balneario_Masc(7)**
   * **Sensores:**
     * sensor_corrente_B_M
     * sensor_luminosidade_B_M
@@ -71,7 +76,7 @@
     * sensor_humidade_B_M > 800 --> desumidificador_B_M:ON
     * sensor_humidade_B_M <300 --> desumidificador_B_M:OFF
 
-* **Balneario_Fem**
+* **Balneario_Fem(8)**
   * **Sensores:**
     * sensor_corrente_B_F
     * sensor_luminosidade_B_F
@@ -86,7 +91,7 @@
     * sensor_humidade_B_F > 800 --> desumidificador_B_F:ON
     * sensor_humidade_B_F <300 --> desumidificador_B_F:OFF
 
-* **Piscina**
+* **Piscina(6)**
   * **Sensores:**
     * sensor_humidade_piscina
     * sensor_Luminosidade_piscina
@@ -105,7 +110,7 @@
     * sensor_corrente_Piscina==0 --> Rising edge dispensador_toalhas1:ON
     * sensor_Luminosidade_piscina>800 --> Lamp_Piscina:OFF
 
-* **Sauna**
+* **Sauna(5)**
   * **Sensores:**
     * sensor_temperatura_sauna
     * sensor_humidade_sauna
