@@ -2,13 +2,15 @@
 CREATE TABLE actuator (
 actuator_id SERIAL PRIMARY KEY,
 type integer,
+actuator_state_id integer REFERENCES actuator_state(actuator_state_id),
 pixel_id integer NOT NULL UNIQUE REFERENCES pixel(pixel_id)
 );
 
 CREATE TABLE sensor (
 sensor_id SERIAL PRIMARY KEY,
 type integer,
-pixel_id integer NOT NULL UNIQUE REFERENCES pixel(pixel_id)
+pixel_id integer NOT NULL UNIQUE REFERENCES pixel(pixel_id),
+sensor_state_id integer REFERENCES sensor_state(sensor_state_id)
 );
 
 CREATE TABLE node (
@@ -92,13 +94,4 @@ profiles_id integer REFERENCES profiles(profiles_id),
 rules_id integer REFERENCES rules(rules_id)
 );
 
-CREATE TABLE actuator_state_actuator (
-actuator_state_id integer REFERENCES actuator_state(actuator_state_id),
-actuator_id integer REFERENCES actuator(actuator_id)
-);
-
-CREATE TABLE sensor_state_sensor (
-sensor_state_id integer REFERENCES sensor_state(sensor_state_id),
-sensor_id integer REFERENCES sensor(sensor_id)
-);
 ```
