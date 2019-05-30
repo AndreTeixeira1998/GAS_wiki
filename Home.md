@@ -12,3 +12,4 @@
  * [UML Use Case Diagram & Use Case Descriptions](UML-Use-Case-Diagram-&-Use-Case-Descriptions)
  * [UML Class Diagram](UML-Class-Diagram)
  * [Gym Topology](Gym-Topology)
+ * [Queries Easy](Queries-Easy)
