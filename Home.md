@@ -14,3 +14,4 @@
  * [Gym Topology](Gym-Topology)
  * [Queries Easy](Queries-Easy)
  * [Queries Medium](Queries-Medium)
+ * [Queries Hard](Queries-Hard)
