@@ -9,13 +9,18 @@ AND room.room_id=1 AND sensor.type=3
 
 Actuator Data
 ===============
-SELECT actuator.actuator_id, room.name, actuator_state.value 
-FROM sinf.actuator, sinf.room, sinf.actuator_state , sinf.room_node, sinf.node_actuator
-WHERE actuator.actuator_id = actuator_state.actuator_id AND room_node.node_id = node_actuator.node_id AND node_actuator.actuator_id = actuator.actuator_id
+select actuator_state.value state, room.name room, actuator.type sensor
+from sinf.actuator_state
+inner join sinf.node_actuator on actuator_state.actuator_id = node_actuator.actuator_id
+inner join sinf.room_node on node_actuator.node_id = room_node.node_id
+inner join sinf.room on room_node.room_id = room.room_id
+inner join sinf.actuator on actuator_state.actuator_id=actuator.actuator_id
+where actuator_state.actuator_state_id in 
+(select max(actuator_state.actuator_state_id) from sinf.actuator_state 
+group by  actuator_id)
+group by actuator_state.value, room.name, actuator.type
 
 
-Configuration Data
-===============
 Control Rules Data
 ===============
 update sinf.rule set value = 50
