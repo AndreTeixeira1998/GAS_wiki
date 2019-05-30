@@ -13,3 +13,4 @@
  * [UML Class Diagram](UML-Class-Diagram)
  * [Gym Topology](Gym-Topology)
  * [Queries Easy](Queries-Easy)
+ * [Queries Medium](Queries-Medium)
